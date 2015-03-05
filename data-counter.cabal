@@ -1,0 +1,39 @@
+name:                data-counter
+version:             0.1.0.0
+-- synopsis:
+-- description:
+license:             BSD3
+license-file:        LICENSE
+author:              Fraser Murray
+maintainer:          fraser.m.murray@gmail.com
+-- copyright:
+category:            Data
+build-type:          Simple
+-- extra-source-files:
+cabal-version:       >=1.10
+
+library
+  exposed-modules: Data.Counter
+  build-depends:
+    base >=4.6 && <4.8,
+    containers,
+    data-default
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  ghc-options: -Wall
+
+test-suite test
+  hs-source-dirs: test
+  main-is: Spec.hs
+  default-language: Haskell2010
+  default-extensions: ScopedTypeVariables
+  type: exitcode-stdio-1.0
+  build-depends:
+    base == 4.*,
+    Cabal >= 1.16.0,
+    data-counter,
+    containers,
+    hspec,
+    QuickCheck,
+    transformers
+  GHC-options: -Wall -Werror -fno-warn-orphans
