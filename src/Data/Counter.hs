@@ -9,6 +9,7 @@ module Data.Counter
   , increment
   , lookup
   , total
+  , unsafeFromMap
   , valid ) where
 
 import Control.Applicative
@@ -47,6 +48,9 @@ lookup x (Counter m) = fromMaybe 0 $ Map.lookup x m
 -- > fromMap (Map.fromListWith (+) xs) == fromCounts xs
 fromMap :: Map a Integer -> Counter a
 fromMap = Counter . Map.filter (> 0)
+
+unsafeFromMap :: Map a Integer -> Counter a
+unsafeFromMap = Counter
 
 fromCounts :: Ord a => [(a, Integer)] -> Counter a
 fromCounts = Counter . Map.filter (> 0) . Map.fromListWith (+)
