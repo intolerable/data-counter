@@ -15,7 +15,7 @@ cabal-version:       >=1.10
 library
   exposed-modules: Data.Counter
   build-depends:
-    base >=4.6 && <4.8,
+    base >=4.6 && <4.9,
     containers,
     data-default
   hs-source-dirs:      src

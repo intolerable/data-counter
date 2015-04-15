@@ -5,6 +5,7 @@ import Data.Counter (Counter)
 import Data.Map (Map)
 import Data.Monoid
 import Data.Set (Set)
+import Prelude
 import Test.Hspec
 import Test.Hspec.QuickCheck
 import Test.QuickCheck
