@@ -39,4 +39,4 @@ test-suite test
     hspec,
     QuickCheck,
     transformers
-  GHC-options: -Wall -Werror -fno-warn-orphans
+  GHC-options: -Wall -fno-warn-orphans
