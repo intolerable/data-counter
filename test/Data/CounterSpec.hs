@@ -1,6 +1,7 @@
 module Data.CounterSpec where
 
 import Control.Applicative
+import Data.Binary
 import Data.Counter (Counter)
 import Data.Map (Map)
 import Data.Monoid
@@ -44,6 +45,10 @@ spec =
       prop "valid x" $ \(x :: Counter String) -> Counter.valid x
       prop "all valid (shrink x)" $ \(x :: Counter String) ->
         all Counter.valid (shrink x)
+
+    describe "Binary" $ do
+      prop "decode . encode == id" $ \(x :: Counter Int) ->
+        decode (encode x) == x
 
     describe "fromMap" $ do
       prop "fromMap (Map.fromListWith (+) xs) == fromCounts xs" $ \(xs :: [(Int, Integer)]) ->

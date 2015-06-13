@@ -13,6 +13,7 @@ module Data.Counter
   , valid ) where
 
 import Control.Applicative
+import Data.Binary
 import Data.Default
 import Data.Map.Strict (Map)
 import Data.Maybe (fromMaybe)
@@ -23,7 +24,7 @@ import qualified Data.Map.Strict as Map
 import qualified Data.Set as Set
 
 newtype Counter a = Counter { toMap :: Map a Integer }
-  deriving (Show, Read, Eq)
+  deriving (Show, Read, Eq, Binary)
 
 instance Default (Counter a) where def = Counter Map.empty
 
