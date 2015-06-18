@@ -14,7 +14,7 @@ module Data.Counter
 
 import Control.Applicative
 import Data.Binary
-import Data.Default
+import Data.Default.Class
 import Data.Map.Strict (Map)
 import Data.Maybe (fromMaybe)
 import Data.Monoid
